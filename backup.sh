@@ -2,8 +2,7 @@
 
 set -ex
 
-ABLETON_PATH="$(cat ableton-path)"
-REMOTE_SCRIPTS_PATH="$ABLETON_PATH/Contents/App-Resources/MIDI Remote Scripts/"
+APP_RESOURCES_PATH="$(cat ableton-path)/Contents/App-Resources"
 
-tar -czvf backup.tar.gz "$REMOTE_SCRIPTS_PATH"
+tar czvf backup.tar.gz -C "$APP_RESOURCES_PATH" "$APP_RESOURCES_PATH/MIDI Remote Scripts"
 
